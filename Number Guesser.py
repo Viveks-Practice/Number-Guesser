@@ -1,6 +1,6 @@
 import random
 
-top_of_range = input("Type a number: ")
+top_of_range = input("Type the largest number you want the guess to possibly be: ")
 
 if top_of_range.isdigit():
     top_of_range = int(top_of_range)
@@ -25,7 +25,13 @@ while True:
         print('Please type a number next time.')
         continue
     
-    if user_guess == random_number
+    if user_guess == random_number:
         print("You got it!")
+        break
+        
     else:
         print('You got it wrong!')
+        if user_guess > random_number:
+            print('Hint: Choose a smaller number... :)')
+        else:
+            print('Hint: Choose a larger number... :)')

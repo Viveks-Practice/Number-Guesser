@@ -1,6 +1,6 @@
 import random
 
-top_of_range = input("Type the largest number you want the guess to possibly be: ")
+top_of_range = input("Type the largest positive integer you want the guess to possibly be: ")
 
 if top_of_range.isdigit():
     top_of_range = int(top_of_range)
@@ -10,12 +10,12 @@ if top_of_range.isdigit():
         quit()
 
 else:
-    print('Please type a number next time')
+    print('Please type a positive integer next time')
     quit()
 
 
 random_number = random.randint(0, top_of_range)
-print(random_number)
+guesses = 0
 
 while True:
     user_guess = input("Make a guess: ")
@@ -27,10 +27,12 @@ while True:
     
     if user_guess == random_number:
         print("You got it!")
+        print("You made " + str(guesses) + " guesses!")
         break
         
     else:
         print('You got it wrong!')
+        print("You have made " + str(guesses) + " guesses so far!")
         if user_guess > random_number:
             print('Hint: Choose a smaller number... :)')
         else:
